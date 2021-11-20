@@ -1,0 +1,37 @@
+.myText {
+    font-family: 'Arial Rounded MT';
+}
+.navBarBg {
+    background-color:blueviolet;
+}
+
+.nav-item:hover {
+    font-size: 20px;
+}
+
+.hand-icon{
+    cursor:pointer;
+}
+
+
+.myReviewCard {
+    width: 30rem;
+    text-align: center;
+   
+}
+.myReviewImg {
+    border-radius: 60%;
+    height: 300px;
+    width: 300px;
+  margin-left:60px;
+}
+
+.FooterBg {
+    background-color: blueviolet;
+   font-size:14px;
+}
+
+.myList {
+    list-style: none;
+    padding:0px;
+}
