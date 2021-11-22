@@ -50,7 +50,6 @@ const Basket = ({ prods }) => {
 
 
 
-
 const Prod = (props) => {
 
 	return (

@@ -24,7 +24,7 @@ class Home extends Component {
                 <div>
                     <Routes  >
 
-                        <Route exact path='/Home' element={<MyShow />}></Route>
+                        <Route exact path='/' element={<MyShow />}></Route>
 
                         <Route exact path='/ShoppingCart' element={<ShoppingCart />}></Route>
 

@@ -38,7 +38,7 @@ class ShoppingCart extends Component {
                                 key={prod.id}
                                 product={prod}
                                 onIncrement={this.handelIncrmnt}
-                              
+                                onDecrement={this.handelDecrmnt}
                                 onDelete={this.handelDelete}
 
                             ></Product>;
@@ -56,7 +56,7 @@ class ShoppingCart extends Component {
         );
         else return (
             <>
-                
+
 
                 <div className="container-fluid mb-5 mt-5">
 
@@ -71,21 +71,21 @@ class ShoppingCart extends Component {
                     </div>
                 </div>
             </>
-           
 
-            );
+
+        );
 
     }
 
     componentDidMount() {
 
-        fetch('http://localhost:5000/products', { method:"Get" })
+        fetch('http://localhost:5000/products', { method: "Get" })
             .then((response) => response.json())
             .then(prods => {
                 this.setState({ products: prods });
             });
 
-       
+
     }
 
     handelIncrmnt = (prod) => {
@@ -93,13 +93,13 @@ class ShoppingCart extends Component {
         let prods = [...this.state.products];
         let indx = prods.indexOf(prod);
 
-        if (prods[indx].quantity <10) {
+        if (prods[indx].quantity < 10) {
             prods[indx].quantity++;
             this.setState({ products: prods })
         }
-        
 
-        
+
+
     };
 
     handelDelete = (prod) => {
@@ -113,25 +113,19 @@ class ShoppingCart extends Component {
 
     }
 
-    /*
-       handelDecrmnt = (prod) => {
+    handelDecrmnt = (prod) => {
         let prods = [...this.state.products];
         let indx = prods.indexOf(prod);
-
         if (prods[indx].quantity > 0) {
             prods[indx].quantity--;
             this.setState({ products: prods })
         }
-
     };
-
-   
-     */
 
     handelDiplayBasket = () => {
         this.setState({ displayBasket: !this.state.displayBasket })
     }
-  
+
 }
 
 export default ShoppingCart;

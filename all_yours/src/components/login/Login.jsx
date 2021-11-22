@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ShoppingCart from '../shopping/ShoppingCart';
 
 
 class Login extends Component {
@@ -54,6 +55,9 @@ class Login extends Component {
             this.setState(
                 { message: <div className="alert text-danger" role="alert" >Invalid login</div> }
             )
+        }
+        else {
+            <ShoppingCart />
         }
        
     }

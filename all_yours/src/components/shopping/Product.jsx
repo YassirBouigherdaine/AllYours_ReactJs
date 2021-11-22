@@ -20,18 +20,23 @@ class Product extends Component {
 					<img src={this.state.product.image} alt="product" className='card-img-top shadow-sm  mt-2' />
 					<div className="card-body mt-1">
 
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item"><h4 className=" mt-1 fs-5">{this.state.product.name}</h4></li>
-							<li class="list-group-item"><h5 className="lead mt-1">${this.state.product.price}</h5></li>
-							
-						</ul>
+						<div className="border-bottom mb-3">
+							<h5 className="lead mt-1 float-end">${this.state.product.price}</h5>
+							<h4 className=" mt-1 fs-5">{this.state.product.name}</h4>
+						</div>
+
+						<span className="badge text-dark float-end fs-5">{this.state.product.quantity}</span>
+						<div className="btn-group">
+							<h5 className="btn btn-outline-success" onClick={() => { this.props.onIncrement(this.state.product); }}>+</h5>
+							<h5 className="btn btn-outline-success" onClick={() => { this.props.onDecrement(this.state.product); }}>-</h5>
+						</div>
 						
-						
-						
+						<p class="card-text">{this.state.product.description}</p>
+
 					</div>
-					<div class="card-footer">
-						<div class="d-grid gap-2">
-							<button class="btn btn-warning shadow-sm" onClick={() => { this.props.onIncrement(this.state.product); }}>Add to Basket</button>
+					<div className="card-footer">
+						<div className="d-grid gap-2">
+							<button className="btn btn-warning shadow-sm" onClick={() => { this.props.onIncrement(this.state.product); }}>Add to Basket</button>
 						</div>
 					</div>
 					
@@ -40,7 +45,8 @@ class Product extends Component {
 				
         );
 
-    }
+	}
+
 
 }
 

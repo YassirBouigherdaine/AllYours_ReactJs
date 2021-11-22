@@ -19,7 +19,7 @@ class NavBar extends Component {
 			<nav className="navbar navbar-expand-lg text-white navBarBg shadow-lg myText rounded ">
 				<div className="container-fluid">
 
-					<Link className="navbar-brand px-4 py-0 fs-4 me-5 hand-icon text-white" to="/Home" >
+					<Link className="navbar-brand px-4 py-0 fs-4 me-5 hand-icon text-white" to="/" >
 						<span className="text-warning fs-2 "><FaSlack className="px-1 fs-3" />All </span>Yours
 					</Link>
 
@@ -31,7 +31,7 @@ class NavBar extends Component {
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
 
 								<li className="nav-item">
-									<Link className="nav-link text-white px-4" to="/Home">Home</Link>
+									<Link className="nav-link text-white px-4" to="/">Home</Link>
 								</li>
 								<li className="nav-item">
 									<Link className="nav-link text-white px-4" to="/ShoppingCart">ShoppingCart</Link>
