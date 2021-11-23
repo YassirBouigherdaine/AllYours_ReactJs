@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import MyShow from './MyShow';
 import Footer from './Footer';
 import ShoppingCart from '../shopping/ShoppingCart';
-import Review from '../reviews/Review';
+import Reviews from '../reviews/Reviews';
 import Contact from '../contact/Contact';
 import Login from '../login/Login';
 import NoMatchPage from './NoMatchPage';
@@ -28,7 +28,7 @@ class Home extends Component {
 
                         <Route exact path='/ShoppingCart' element={<ShoppingCart />}></Route>
 
-                        <Route exact path='/Review' element={<Review />}></Route>
+                        <Route exact path='/Reviews' element={<Reviews />}></Route>
 
                         <Route exact path='/Contact' element={<Contact />}></Route>
 

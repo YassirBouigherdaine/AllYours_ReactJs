@@ -37,7 +37,7 @@ class NavBar extends Component {
 									<Link className="nav-link text-white px-4" to="/ShoppingCart">ShoppingCart</Link>
 								</li>
 								<li className="nav-item">
-									<Link className="nav-link text-white px-4" to="/Review">Reviews</Link>
+									<Link className="nav-link text-white px-4" to="/Reviews">Reviews</Link>
 								</li>
 								<li className="nav-item">
 									<Link className="nav-link text-white px-4" to="/Contact">Contact</Link>

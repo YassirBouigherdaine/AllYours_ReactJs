@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Product from './Product';
 import Basket from './Basket';
-import { FaCartPlus } from 'react-icons/fa';
+import { FaCartPlus, FaClipboardList } from 'react-icons/fa';
 
 
 
@@ -63,7 +63,7 @@ class ShoppingCart extends Component {
                     <div className="row shadow-lg p-3 mb-5 bg-body rounded ms-3 me-3">
 
                         <span className="hand-icon ">
-                            <FaCartPlus className="text-success float-end fs-2" onClick={this.handelDiplayBasket} />
+                            <FaClipboardList className="text-success float-end fs-2" onClick={this.handelDiplayBasket} />
                         </span>
 
                         {this.state.displayBasket && <Basket prods={this.state.products} />}

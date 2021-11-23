@@ -1,12 +1,61 @@
+import React, { useState, useEffect } from 'react';
+import Review from './Review';
 
 
 
-const reviews = [
-	{ id: 1, image: "pics/pic19.jpg", name: "David", job: "Developer", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit iure Lorem ipsum dolor" },
-	{ id: 2, image: "pics/pic22.jpg", name: "Ranbir", job: "Developer", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit iure Lorem ipsum dolor" },
-	{ id: 3, image: "pics/pic20.jpg", name: "Carolina", job: "Developer", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit iure Lorem ipsum dolor" },
-	{ id: 4, image: "pics/pic21.jpg", name: "Jessy", job: "Developer", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit iure Lorem ipsum dolor" },
-];
+const Reviews = () => {
+
+    const [index, setIndex] = useState(1);
+    const [people, setPeople] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews', { method: "Get" })
+            .then((response) => response.json())
+            .then(revs => {
+                setPeople(revs)
+            });
+    }, [])
+
+    const prevReview = () => {
+
+        setIndex(index < 4 ? index + 1 : 1);
+    }
+    const nextReview = () => {
+
+        setIndex(index > 1 ? index - 1 : 4);
+    }
+
+    return (
+        <>
+
+            <div className="container-fluid mb-5 mt-5">
+
+                <div className="row  ms-1 me-1 ">
+
+                    <div className="col-lg-12 shadow-lg   mb-5 bg-body rounded">
+
+                        {people && people.map((person) => {
+
+                            if(person.id === index) return < Review
+                                key={person.id}
+
+                                name={person.name}
+                                image={person.image}
+                                job={person.job}
+                                text={person.text}
+                                prevReview={prevReview}
+                                nextReview={nextReview}
+
+                            ></Review>;
+                        })}
+
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+
+};
 
 
-export default reviews;
+export default Reviews;
