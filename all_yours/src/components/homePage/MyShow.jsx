@@ -9,8 +9,8 @@ class MyShow extends Component {
 
         return (
             <>
-            <div className=" px-5 py-4  figure" style={{
-                backgroundImage: `url("pics/pic1.jpg")`, backgroundSize: 'cover', width: '100%', height:'100%'
+                <div className=" px-5 py-4  figure" style={{
+                    backgroundImage: `url("pics/pic1.jpg")`, backgroundSize: 'cover', width: '100%', height: '100%',
             }}>
                 <div className="mt-5 pt-5 text-dark myText">
                     <h1 className="mt-5 mb-5 ">New Fashion</h1>
@@ -32,7 +32,7 @@ class MyShow extends Component {
                         <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing amet consectetur.</p>
                        
                         
-                        <Link className="btn btn-warning m-3" to="/Review">View Reviews</Link>
+                        <Link className="btn btn-warning m-3" to="/Reviews">View Reviews</Link>
                     </div>
                    
                 </div>

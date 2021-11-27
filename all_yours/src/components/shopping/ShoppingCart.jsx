@@ -12,21 +12,25 @@ class ShoppingCart extends Component {
     state = {
         products: [],
         displayBasket: false,
+        prodNumbers: 0,
+        loading: true,
     };
 
 
 
     render() {
 
-        if (!this.state.displayBasket) return (
+        if (!this.state.displayBasket && !this.state.loading) return (
             <>
 
                 <div className="container-fluid mb-5 mt-5">
 
                     <div className="row shadow-lg p-3 mb-5 bg-body rounded ms-3 me-3">
 
-                        <span className="hand-icon ">
-                            <FaCartPlus className="text-success float-end fs-2" onClick={this.handelDiplayBasket} />
+                        <span className="hand-icon " onClick={this.handelDiplayBasket}>
+                            <span class="badge bg-warning text-dark float-end mb-5 border border-dark rounded-circle">{this.state.prodNumbers}</span>
+                            <FaCartPlus className="text-success float-end fs-1 mt-2" />
+                            
                         </span>
 
                         <h1 className="display-6 text-center mt-5 mb-5 ">Shopping Cart</h1>
@@ -40,6 +44,7 @@ class ShoppingCart extends Component {
                                 onIncrement={this.handelIncrmnt}
                                 onDecrement={this.handelDecrmnt}
                                 onDelete={this.handelDelete}
+                                
 
                             ></Product>;
 
@@ -50,13 +55,10 @@ class ShoppingCart extends Component {
 
 
                 </div>
-
-
             </>
         );
-        else return (
+        else if (this.state.displayBasket && !this.state.loading) return (
             <>
-
 
                 <div className="container-fluid mb-5 mt-5">
 
@@ -71,9 +73,25 @@ class ShoppingCart extends Component {
                     </div>
                 </div>
             </>
-
-
         );
+
+        if (this.state.loading) return (
+
+            <div className="container-fluid mb-5 mt-5">
+
+                <div className="row ">
+
+                    <div className="text-center mt-5 mb-5 px-5 py-5">
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            )
 
     }
 
@@ -83,9 +101,9 @@ class ShoppingCart extends Component {
             .then((response) => response.json())
             .then(prods => {
                 this.setState({ products: prods });
+
+                this.setState({ loading: false });
             });
-
-
     }
 
     handelIncrmnt = (prod) => {
@@ -94,12 +112,11 @@ class ShoppingCart extends Component {
         let indx = prods.indexOf(prod);
 
         if (prods[indx].quantity < 10) {
+
             prods[indx].quantity++;
             this.setState({ products: prods })
+            this.setState({ prodNumbers: this.state.prodNumbers + 1 })
         }
-
-
-
     };
 
     handelDelete = (prod) => {
@@ -114,11 +131,15 @@ class ShoppingCart extends Component {
     }
 
     handelDecrmnt = (prod) => {
+
         let prods = [...this.state.products];
         let indx = prods.indexOf(prod);
+
         if (prods[indx].quantity > 0) {
+
             prods[indx].quantity--;
             this.setState({ products: prods })
+            this.setState({ prodNumbers: this.state.prodNumbers - 1 })
         }
     };
 

@@ -30,7 +30,7 @@ class Footer extends Component {
                         </div>
                         <div className="col-4">
                             <h5 className="fs-5">Contact us</h5>
-                            <br />
+
                             <br />
                             <ul className="myList">
                                 <li>95 (61) 346613895</li>

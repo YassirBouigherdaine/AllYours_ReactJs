@@ -9,7 +9,7 @@ const Review = (props) => {
 
         <article className="col-lg-4 container-fluid ">
 
-            <h1 className="display-6 text-center ms-5 mt-5 mb-5">Reviews</h1>
+            <h1 className="display-6 text-center ms-5 mt-5 mb-5 underline">Reviews</h1>
             <div className="myReviewCard shadow-lg mb-5 bg-body rounded ">
                 <img src={props.image} className=" myReviewImg me-5 shadow p-3 mt-5 mb-3 bg-body " alt={props.name} />
                 <div className="card-body ms-4">

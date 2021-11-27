@@ -7,12 +7,15 @@ const Reviews = () => {
 
     const [index, setIndex] = useState(1);
     const [people, setPeople] = useState([]);
+    const [loading, setLoding] = useState(true);
 
     useEffect(() => {
         fetch('http://localhost:5000/reviews', { method: "Get" })
             .then((response) => response.json())
             .then(revs => {
-                setPeople(revs)
+
+                setPeople(revs);
+                setLoding(false);
             });
     }, [])
 
@@ -25,7 +28,7 @@ const Reviews = () => {
         setIndex(index > 1 ? index - 1 : 4);
     }
 
-    return (
+    if (!loading) return (
         <>
 
             <div className="container-fluid mb-5 mt-5">
@@ -36,7 +39,7 @@ const Reviews = () => {
 
                         {people && people.map((person) => {
 
-                            if(person.id === index) return < Review
+                            if (person.id === index) return < Review
                                 key={person.id}
 
                                 name={person.name}
@@ -54,6 +57,25 @@ const Reviews = () => {
             </div>
         </>
     )
+    else {
+        return (
+
+            <div className="container-fluid mb-5 mt-5">
+
+                <div className="row ">
+
+                    <div className="text-center mt-5 mb-5 px-5 py-5">
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            )
+    }
 
 };
 
