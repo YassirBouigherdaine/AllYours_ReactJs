@@ -9,7 +9,7 @@ class NoMatchPage extends Component {
         return (
             <div className="container-fluid mb-5 mt-5">
 
-                <div className="row mb-5 mt-5 ">
+                <div className="row ">
             <div className="text-center mb-5 mt-5">
                 <h1 className="display-6 text-center mt-5 mb-5 ">Page not found !</h1>
 

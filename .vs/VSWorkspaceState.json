@@ -3,11 +3,8 @@
     "",
     "\\all_yours",
     "\\all_yours\\src",
-    "\\all_yours\\src\\components",
-    "\\all_yours\\src\\components\\homePage",
-    "\\all_yours\\src\\components\\login",
-    "\\all_yours\\src\\components\\shopping"
+    "\\all_yours\\src\\components"
   ],
-  "SelectedNode": "\\all_yours\\src\\components\\login\\Login.jsx",
+  "SelectedNode": "\\all_yours\\src\\index.js",
   "PreviewInSolutionExplorer": false
 }
